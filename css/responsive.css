@@ -1,0 +1,35 @@
+/* [TODO - Responsive Styles] */
+.nav-items {
+    display: flex; 
+    gap: 20px;
+}
+
+.hamburger {
+    display: none; 
+    background: none;
+    font-size: 28px;
+    border: none;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-items {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: white;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .nav-items.active {
+        display: flex;
+    }
+}

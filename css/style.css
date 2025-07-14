@@ -1,0 +1,73 @@
+    :root {
+        
+        --primary-color: #0057b7;
+        /* APU Blue */
+        --secondary-color: #ffcb05;
+        /* Accent Yellow */
+        --text-color: #1a1a1a;
+        --background-color: #ffffff;
+        --muted-color: #f4f4f4;
+        --danger-color: #e63946;
+        --success-color: #2a9d8f;
+
+        /* ===== Font Settings ===== */
+        --font-family: 'Segoe UI', Roboto, sans-serif;
+        --font-size-base: 16px;
+        --font-size-lg: 20px;
+        --font-size-sm: 14px;
+        --heading-font-weight: 600;
+        --body-font-weight: 400;
+
+        /* ===== Spacing ===== */
+        --spacing-xs: 4px;
+        --spacing-sm: 8px;
+        --spacing-md: 16px;
+        --spacing-lg: 24px;
+        --spacing-xl: 40px;
+
+        /* ===== Borders & Radius ===== */
+        --border-radius-sm: 4px;
+        --border-radius-md: 8px;
+        --border-radius-lg: 12px;
+
+        /* ===== Shadow ===== */
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+
+        /* ===== Transitions ===== */
+        --transition-fast: 0.2s ease-in-out;
+        --transition-slow: 0.4s ease;
+    }
+
+    body {
+        font-family: var(--font-family);
+        font-size: var(--font-size-base);
+        color: var(--text-color);
+        background-color: var(--background-color);
+        margin: 0;
+        padding: 0;
+    }
+
+    .btn-primary {
+        background-color: var(--primary-color);
+        color: white;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border: none;
+        border-radius: var(--border-radius-md);
+        cursor: pointer;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition-fast);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+        box-shadow: var(--shadow-md);
+    }
+
+    .navbar {
+        background-color: var(--primary-color);
+        padding: var(--spacing-md);
+        box-shadow: var(--shadow-sm);
+    }
