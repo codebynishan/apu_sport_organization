@@ -1,73 +1,161 @@
-    :root {
-        
-        --primary-color: #0057b7;
-        /* APU Blue */
-        --secondary-color: #ffcb05;
-        /* Accent Yellow */
-        --text-color: #1a1a1a;
-        --background-color: #ffffff;
-        --muted-color: #f4f4f4;
-        --danger-color: #e63946;
-        --success-color: #2a9d8f;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:root {
+    /* ===== Brand Colors ===== */
+    --primary-color: #1E90FF;
+    --secondary-color:#FFB400; 
+    --text-color: #1a1a1a;
+    --background-color: #ffffff;
+    --muted-color: #f4f4f4;
+    --danger-color: #e63946;
+    --success-color: #2a9d8f;
 
-        /* ===== Font Settings ===== */
-        --font-family: 'Segoe UI', Roboto, sans-serif;
-        --font-size-base: 16px;
-        --font-size-lg: 20px;
-        --font-size-sm: 14px;
-        --heading-font-weight: 600;
-        --body-font-weight: 400;
+    /* ===== Extended Theme Colors ===== */
+    --highlight-color: #03dac6;
+    --accent-purple: #6a00f4;
+    --accent-pink: #ff477e;
 
-        /* ===== Spacing ===== */
-        --spacing-xs: 4px;
-        --spacing-sm: 8px;
-        --spacing-md: 16px;
-        --spacing-lg: 24px;
-        --spacing-xl: 40px;
+    /* ===== Gradients ===== */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), #000000);
+    --gradient-accent: linear-gradient(135deg, #ffcb05, #ffaa00);
+    --gradient-radial: radial-gradient(circle at top left, #0057b7, #003f8a);
 
-        /* ===== Borders & Radius ===== */
-        --border-radius-sm: 4px;
-        --border-radius-md: 8px;
-        --border-radius-lg: 12px;
+    /* ===== Font Settings ===== */
+    --heading-font: 'Bebas Neue', sans-serif;
+    --font-family:"Bebas Neue", sans-serif; 
+    --font-size-base: 16px;
+    --font-size-lg: 20px;
+    --font-size-sm: 14px;
+    --heading-font-weight: 600;
+    --body-font-weight: 400;
 
-        /* ===== Shadow ===== */
-        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+    /* ===== Spacing ===== */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
 
-        /* ===== Transitions ===== */
-        --transition-fast: 0.2s ease-in-out;
-        --transition-slow: 0.4s ease;
-    }
+    /* ===== Borders & Radius ===== */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    --border-radius-full: 999px;
 
-    body {
-        font-family: var(--font-family);
-        font-size: var(--font-size-base);
-        color: var(--text-color);
-        background-color: var(--background-color);
-        margin: 0;
-        padding: 0;
-    }
+    /* ===== Shadow ===== */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
 
-    .btn-primary {
-        background-color: var(--primary-color);
-        color: white;
-        padding: var(--spacing-sm) var(--spacing-md);
-        border: none;
-        border-radius: var(--border-radius-md);
-        cursor: pointer;
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition-fast);
-    }
+    /* ===== Transitions ===== */
+    --transition-fast: 0.2s ease-in-out;
+    --transition-slow: 0.4s ease;
+    --secondary-color-transparent: rgba(255, 203, 5, 0.15);
+    --secondary-border-transparent: rgba(255, 203, 5, 0.3);
+}
 
-    .btn-primary:hover {
-        background-color: var(--secondary-color);
-        color: var(--text-color);
-        box-shadow: var(--shadow-md);
-    }
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
 
-    .navbar {
-        background-color: var(--primary-color);
-        padding: var(--spacing-md);
-        box-shadow: var(--shadow-sm);
-    }
+
+.headeri {
+    position: relative;
+    width: 100%;
+    padding-top: var(--spacing-lg);
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.header {
+    height: auto;
+    padding: var(--spacing-lg); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar {
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    width: 90%;
+    max-width: 1200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+    padding: var(--spacing-sm);
+    margin: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15); 
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    transition: background-color var(--transition-fast);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #ffd700;
+    color: var(--text-color);
+    box-shadow: var(--shadow-md);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
