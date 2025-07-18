@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/responsive.css">
+        <script src="/js/script.js" defer></script>
         <title>APU Sports Organization</title>
     </head>
-
     <body>
-        <header class="header">
-            <nav class="navbar">
-                <div class="logo-container">
-                    <img src="#" alt="APU Logo" class="logo">
-                </div>
-                <!-- [TODO - Hamburger Menu Button for Mobile] -->
-                <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
-                    &#9776;
-                </button>
-                <ul class="nav-items">
-                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Events</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Clubs</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                </ul>
-
-
-                <div class="user-action-btn">
-                    <button class="btn-primary">
-                        Join Us
-                    </button>
-                </div>
-            </nav>
-        </header>
-
         <!-- Main Section -->
         <main class="main" id="main">
-
-            <section class="hero" id="hero">
-                <div class="hero-container">
-                    <div class="left-container">
-                        <!-- [TODO - Intro section] -->
-                        <p>LEFT</p>
-                    </div>
-                    <div class="right-container">
-                        <!-- [TODO - Short Video Implementation] -->
-                        <p>RIGHT</p>
+            <section class="hero">
+                <video autoplay muted loop playsinline class="background-video">
+                    <source src="assets/hero-background.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <header class="header">
+                    <nav class="navbar">
+                        <div class="logo-container">
+                            <img src="#" alt="APU Logo" class="logo">
+                        </div>
+                        <!-- [TODO - Hamburger Menu Button for Mobile] -->
+                        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
+                            &#9776;
+                        </button>
+                        <ul class="nav-items">
+                            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Events</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Clubs</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                        </ul>
+                        <div class="user-action-btn">
+                            <button class="btn-primary">
+                                Join Us
+                            </button>
+                        </div>
+                    </nav>
+                </header>
+                <!-- Background overlay -->
+                <div class="overlay">
+                    <div class="hero-content">
+                        <p class="subtitle">UNIVERSITY SPORTS CLUB</p>
+                        <h1>APU UNIVERSITY COLLEGE<br>SPORTS ORGANIZATION</h1>
+                        <p class="description">
+                        APU Sports Organization is dedicated to promoting a vibrant sports culture among students. Join our diverse sports programs and unleash your athletic potential.
+                        </p>
+                        <button class="btn-primary" onclick="exploreEvents()">EXPLORE EVENTS</button>
                     </div>
                 </div>
+
+                <!-- Athletes -->
+                <img src="assets/top-left.png" class="athlete cricketer-left" alt="Cricketer Left" />
+                <img src="assets/top-right.png" class="athlete cricketer-right" alt="Cricketer Right" />
+                <img src="assets/bottom-left.png" class="athlete footballer-left" alt="Footballer Left" />
+                <img src="assets/bottom-right.png" class="athlete footballer-right" alt="Footballer Right" />
             </section>
 
             <section class="event-timer" id="event-timer">
-                <!-- [TODO - Add countdown timer for upcoming major sports event] -->
                 <div class="event-timer-container">
-                    <h1>Upcoming Event Countdown</h1>
+                    <h1 class="event-title">Upcoming Event Countdown</h1>
                     <div class="timer-display">
-                        <!-- [TODO - Dynamically update these values using JavaScript] -->
                         <div class="timer-box">
                             <span class="timer-value" id="days">00</span>
                             <span class="timer-label">Days</span>
@@ -74,14 +78,16 @@
                             <span class="timer-label">Seconds</span>
                         </div>
                     </div>
-                    <!-- [TODO - Show event name and description below the timer] -->
+
                     <div class="event-details">
-                        <h2>[Event Name]</h2>
-                        <p>[Brief description about the event goes here]</p>
+                        <h2>Inter-College Sports Meet 2025</h2>
+                        <p>
+                        Join us for an exhilarating day of competitive sports, unity, and celebration among colleges!
+                        Experience thrilling games, enthusiastic crowds, and inspiring athletes.
+                        </p>
                     </div>
                 </div>
             </section>
-
             <section class="metrics" id="metrics">
                 <!-- [TODO - Show the Total Groups, Events, Sports Clubs, Awards] -->
                 <div class="metrics-container">
@@ -156,8 +162,5 @@
                 </div>
             </div>
         </footer>
-        <script src="js/script.js"></script>
-
     </body>
-
 </html>

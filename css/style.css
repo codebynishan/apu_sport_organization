@@ -1,56 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 :root {
-    /* ===== Brand Colors ===== */
-    --primary-color: #1E90FF;
-    --secondary-color:#FFB400; 
-    --text-color: #1a1a1a;
-    --background-color: #ffffff;
-    --muted-color: #f4f4f4;
-    --danger-color: #e63946;
-    --success-color: #2a9d8f;
+  /* Color palette */
+  --color-dark-bg: #121212;
+  --color-light-text: #ffffff;
+  --color-accent: #FFD700; /* Gold */
+  --color-accent-hover: #E5C100;
 
-    /* ===== Extended Theme Colors ===== */
-    --highlight-color: #03dac6;
-    --accent-purple: #6a00f4;
-    --accent-pink: #ff477e;
+  /* Gradients */
+  --gradient-primary: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(30,30,30,0.8) 100%);
 
-    /* ===== Gradients ===== */
-    --gradient-primary: linear-gradient(135deg, var(--primary-color), #000000);
-    --gradient-accent: linear-gradient(135deg, #ffcb05, #ffaa00);
-    --gradient-radial: radial-gradient(circle at top left, #0057b7, #003f8a);
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
 
-    /* ===== Font Settings ===== */
-    --heading-font: 'Bebas Neue', sans-serif;
-    --font-family:"Bebas Neue", sans-serif; 
-    --font-size-base: 16px;
-    --font-size-lg: 20px;
-    --font-size-sm: 14px;
-    --heading-font-weight: 600;
-    --body-font-weight: 400;
+  /* Border radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
 
-    /* ===== Spacing ===== */
-    --spacing-xs: 4px;
-    --spacing-sm: 8px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
-    --spacing-xl: 40px;
+  /* Font sizes */
+  --font-size-sm: 0.875rem;
+ --font-family:"Bebas Neue", sans-serif; 
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
 
-    /* ===== Borders & Radius ===== */
-    --border-radius-sm: 4px;
-    --border-radius-md: 8px;
-    --border-radius-lg: 16px;
-    --border-radius-full: 999px;
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 12px rgba(0, 0, 0, 0.2);
 
-    /* ===== Shadow ===== */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
-
-    /* ===== Transitions ===== */
-    --transition-fast: 0.2s ease-in-out;
-    --transition-slow: 0.4s ease;
-    --secondary-color-transparent: rgba(255, 203, 5, 0.15);
-    --secondary-border-transparent: rgba(255, 203, 5, 0.3);
+  /* Transitions */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-slow: 0.4s ease-in-out;
 }
 
 body {
@@ -61,9 +46,7 @@ body {
     margin: 0;
     padding: 0;
 }
-
-
-.headeri {
+.header {
     position: relative;
     width: 100%;
     padding-top: var(--spacing-lg);
@@ -84,8 +67,9 @@ body {
     background: var(--gradient-primary);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-sm) var(--spacing-lg);
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
+    margin: auto;
 
     display: flex;
     align-items: center;
@@ -134,21 +118,23 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    padding: var(--spacing-sm) var(--spacing-md);
-    border: none;
-    border-radius: var(--border-radius-md);
-    cursor: pointer;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition-fast);
-    font-weight: 600;
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-dark-bg);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
-    background-color: #ffd700;
-    color: var(--text-color);
-    box-shadow: var(--shadow-md);
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
 }
 
 .hamburger {
@@ -159,3 +145,142 @@ body {
     cursor: pointer;
     color: white;
 }
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  padding: 1rem 2rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  color: #fff;
+  z-index: 2;
+  max-width: 800px;
+  font-size: 30px;
+  padding: 2rem;
+}
+.athlete {
+  position: absolute;
+  z-index: 1;
+  max-height: 300px;
+}
+
+.cricketer-left {
+  left: 2%;
+  top: 20%;
+}
+
+.cricketer-right {
+  right: 2%;
+  top: 20%;
+}
+
+.footballer-left {
+  left: 10%;
+  bottom: 5%;
+}
+
+.footballer-right {
+  right: 10%;
+  bottom: 5%;
+}
+
+.tennis-player {
+  bottom: 0%;
+  left: 45%;
+  transform: translateX(-50%);
+}
+
+.event-timer {
+  background: linear-gradient(to bottom right, var(--color-dark-bg), #000);
+  padding: var(--spacing-xl);
+  color: var(--color-light);
+  text-align: center;
+}
+
+.event-timer-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: var(--spacing-lg);
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.event-title {
+  font-size: var(--font-size-xl);
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-lg);
+}
+
+.timer-display {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-lg);
+}
+
+.timer-box {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  min-width: 100px;
+}
+
+.timer-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.timer-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.event-details h2 {
+  color: var(--color-accent);
+  font-size: var(--font-size-lg);
+  margin-top: var(--spacing-md);
+}
+
+.event-details p {
+  font-size: var(--font-size-md);
+  color: var(--color-light-text);
+  margin-top: var(--spacing-sm);
+}
+
