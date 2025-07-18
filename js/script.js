@@ -38,3 +38,17 @@
   // Initial call and repeat every second
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  document.querySelectorAll(".club-card").forEach((card) => {
+    const video = card.querySelector("video");
+
+    card.addEventListener("mouseenter", () => {
+      video.play();
+    });
+
+    card.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  });
+

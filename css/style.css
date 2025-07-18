@@ -283,4 +283,63 @@ body {
   color: var(--color-light-text);
   margin-top: var(--spacing-sm);
 }
+.clubs-container {
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.clubs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.club-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.club-card video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.club-card:hover video {
+  transform: scale(1.05);
+}
+
+.club-card:hover video {
+  pointer-events: auto;
+}
+
+.club-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  transition: transform 0.3s ease;
+  transform: translateY(100%);
+}
+
+.club-card:hover .club-info {
+  transform: translateY(0);
+}
 

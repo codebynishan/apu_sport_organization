@@ -27,6 +27,25 @@
   .event-details p {
     font-size: 1rem;
   }
+  .clubs-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .clubs-grid {
+    gap: 1.5rem;
+  }
+
+  .club-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .club-info p {
+    font-size: 1rem;
+  }
 }
 
 /* Tablets & Mobile: max-width 768px */
@@ -92,6 +111,29 @@
   .event-details p {
     font-size: 0.95rem;
   }
+   .clubs-container {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .clubs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .club-info {
+    padding: 0.75rem;
+  }
+
+  .club-info h3 {
+    font-size: 1.15rem;
+  }
+
+  .club-info p {
+    font-size: 0.95rem;
+  }
 }
 
 /* Small Devices: max-width 480px */
@@ -114,6 +156,17 @@
   }
 
   .event-details p {
+    font-size: 0.85rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .club-info h3 {
+    font-size: 1rem;
+  }
+
+  .club-info p {
     font-size: 0.85rem;
   }
 }
