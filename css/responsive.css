@@ -186,6 +186,33 @@
   .dean-text p {
     font-size: 0.95rem;
   }
+  .motivation-container {
+    padding: var(--spacing-md);
+  }
+
+  .motivation-list li {
+    font-size: 0.95rem;
+    flex-direction: row;
+  }
+    .cta-buttons {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-lists {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    text-align: center;
+  }
  }
 
 /* Small Devices: max-width 480px */
