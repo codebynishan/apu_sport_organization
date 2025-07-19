@@ -134,7 +134,59 @@
   .club-info p {
     font-size: 0.95rem;
   }
-}
+   .metrics {
+    padding: var(--spacing-lg);
+  }
+
+  .metrics .section-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .metrics-items {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .metrics-item {
+    padding: var(--spacing-md);
+  }
+
+  .metrics-item h3 {
+    font-size: var(--font-size-lg);
+  }
+
+  .metrics-item p {
+    font-size: var(--font-size-sm);
+  }
+   .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 150px;
+  }
+
+  .gallery-item.tall,
+  .gallery-item.wide {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+   .testimonial {
+    min-width: 220px;
+    font-size: 0.8rem;
+  }
+   .dean-message-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dean-text,
+  .dean-photo-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dean-text p {
+    font-size: 0.95rem;
+  }
+ }
 
 /* Small Devices: max-width 480px */
 @media (max-width: 480px) {
@@ -169,5 +221,17 @@
   .club-info p {
     font-size: 0.85rem;
   }
-}
+   .metrics-items {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 150px;
+  }
+   .testimonial {
+    min-width: 200px;
+    padding: var(--spacing-sm);
+  }
+
+  }
 
