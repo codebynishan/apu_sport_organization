@@ -1,10 +1,27 @@
-    const hamburger = document.getElementById('hamburger-btn');
-    const navMenu = document.getElementById('nav-menu');
+    // Mobile menu toggle
+const hamburger = document.getElementById('hamburger-btn');
+  const navMenu = document.getElementById('nav-menu');
 
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active'); // [TODO - Add mobile styles for .active class in CSS]
-    });
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  }); 
+  // Scroll up/down navbar show/hide
+  let lastScrollTop = 0;
+  const header = document.getElementById('main-header');
 
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scroll Down
+      header.classList.add("hide-navbar");
+    } else {
+      // Scroll Up
+      header.classList.remove("hide-navbar");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  }); 
 // Timmer Section
 //
 // // Set the target event date and time (change as needed)
@@ -51,4 +68,7 @@
       video.currentTime = 0;
     });
   });
-
+const video = document.getElementById('background-video');
+  video.addEventListener('canplaythrough', () => {
+    video.style.opacity = '1';
+  });
