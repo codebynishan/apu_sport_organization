@@ -12,32 +12,33 @@
         <!-- Main Section -->
         <main class="main" id="main">
             <section class="hero">
-                <video autoplay muted loop playsinline class="background-video">
+                <video autoplay muted loop playsinline poster="assets/hero-thumbnail.png" id="background-video" class="background-video">
                     <source src="assets/hero-background.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
-                <header class="header">
-                    <nav class="navbar">
+                <header class="header" id="main-header">
+                    <nav class="navbar" id="navbar">
                         <div class="logo-container">
-                            <img src="#" alt="APU Logo" class="logo">
+                            <img src="#" alt="APU Logo" class="logo" />
                         </div>
-                        <!-- [TODO - Hamburger Menu Button for Mobile] -->
+
                         <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
                             &#9776;
                         </button>
-                        <ul class="nav-items">
+
+                        <ul class="nav-items" id="nav-menu">
                             <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Events</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Clubs</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                         </ul>
                         <div class="user-action-btn">
-                            <button class="btn-primary">
-                                Join Us
-                            </button>
+                            <button class="button-primary "> Join Us </button>
                         </div>
+
                     </nav>
                 </header>
+
                 <!-- Background overlay -->
                 <div class="overlay">
                     <div class="hero-content">
@@ -46,7 +47,7 @@
                         <p class="description">
                         APU Sports Organization is dedicated to promoting a vibrant sports culture among students. Join our diverse sports programs and unleash your athletic potential.
                         </p>
-                        <button class="btn-primary" onclick="exploreEvents()">EXPLORE EVENTS</button>
+                        <button class="button-outline" >EXPLORE EVENTS</button>
                     </div>
                 </div>
 
