@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 :root {
   /* Color palette */
   --color-dark-bg: #121212;
   --color-light-text: #ffffff;
-  --color-accent: #FFD700; /* Gold */
+  --color-accent: #FFD700;
+  /* Gold */
   --color-accent-hover: #E5C100;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(30,30,30,0.8) 100%);
+  --gradient-primary: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(30, 30, 30, 0.8) 100%);
 
   /* Spacing */
   --spacing-xs: 4px;
@@ -23,7 +25,7 @@
 
   /* Font sizes */
   --font-size-sm: 0.875rem;
- --font-family:"Bebas Neue", sans-serif; 
+  --font-family: "Bebas Neue", sans-serif;
   --font-size-md: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.5rem;
@@ -36,16 +38,106 @@
   /* Transitions */
   --transition-fast: 0.2s ease-in-out;
   --transition-slow: 0.4s ease-in-out;
+
+  /* Gap */
+  --gap-xs: 8px;
+  --gap-sm: 12px;
+  --gap-md: 16px;
+  --gap-lg: 24px;
+  --gap-xl: 32px;
+
+  /* padding */
+  --padding-xs: 4px;
+  --padding-sm: 8px;
+  --padding-md: 16px;
+  --padding-lg: 24px;
+  --padding-xl: 32px;
+  --padding-2xl: 48px;
+
+  /* margin */
+  --margin-xs: 4px;
+  --margin-sm: 8px;
+  --margin-md: 16px;
+  --margin-lg: 24px;
+  --margin-xl: 32px;
+  --margin-2xl: 48px;
 }
 
-body {
-    font-family: var(--font-family);
-    font-size: var(--font-size-base);
-    color: var(--text-color);
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
+.bg-dark         { background-color: var(--color-dark-bg); }
+.bg-accent       { background-color: var(--color-accent); }
+.bg-accent-hover:hover { background-color: var(--color-accent-hover); }
+.bg-gradient     { background: var(--gradient-primary); }
+
+.text-light      { color: var(--color-light-text); }
+.text-accent     { color: var(--color-accent); }
+
+
+.text-sm   { font-size: var(--font-size-sm); }
+.text-md   { font-size: var(--font-size-md); }
+.text-lg   { font-size: var(--font-size-lg); }
+.text-xl   { font-size: var(--font-size-xl); }
+
+.font-bebas { font-family: var(--font-family); }
+
+
+/* Padding */
+.p-xs  { padding: var(--padding-xs); }
+.p-sm  { padding: var(--padding-sm); }
+.p-md  { padding: var(--padding-md); }
+.p-lg  { padding: var(--padding-lg); }
+.p-xl  { padding: var(--padding-xl); }
+.p-2xl { padding: var(--padding-2xl); }
+
+.px-md { padding-left: var(--padding-md); padding-right: var(--padding-md); }
+.py-md { padding-top: var(--padding-md); padding-bottom: var(--padding-md); }
+
+/* Margin */
+.m-xs  { margin: var(--margin-xs); }
+.m-sm  { margin: var(--margin-sm); }
+.m-md  { margin: var(--margin-md); }
+.m-lg  { margin: var(--margin-lg); }
+.m-xl  { margin: var(--margin-xl); }
+.m-2xl { margin: var(--margin-2xl); }
+
+.mx-md { margin-left: var(--margin-md); margin-right: var(--margin-md); }
+.my-md { margin-top: var(--margin-md); margin-bottom: var(--margin-md); }
+
+/* Gap */
+.gap-xs { gap: var(--gap-xs); }
+.gap-sm { gap: var(--gap-sm); }
+.gap-md { gap: var(--gap-md); }
+.gap-lg { gap: var(--gap-lg); }
+.gap-xl { gap: var(--gap-xl); }
+
+.rounded-sm  { border-radius: var(--border-radius-sm); }
+.rounded-md  { border-radius: var(--border-radius-md); }
+.rounded-lg  { border-radius: var(--border-radius-lg); }
+
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+
+.transition-fast { transition: all var(--transition-fast); }
+.transition-slow { transition: all var(--transition-slow); }
+
+.m-0{
+  margin: 0;
 }
+.p-0{
+  padding: 0;
+}
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-items: center;
+}
+
+
 .button-primary {
   background-color: var(--color-accent);
   color: var(--color-dark-bg);
@@ -62,6 +154,7 @@ body {
 .button-primary:hover {
   background-color: var(--color-accent-hover);
 }
+
 .button-outline {
   background-color: transparent;
   color: var(--color-accent);
@@ -79,6 +172,7 @@ body {
   background-color: var(--color-accent);
   color: var(--color-dark-bg);
 }
+
 .button-ghost {
   background-color: transparent;
   color: var(--color-light-text);
@@ -91,11 +185,21 @@ body {
   transition: background-color var(--transition-fast);
 }
 
+
 .button-ghost:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.bottom-3 {
+  position: absolute;
+  bottom: 3rem;
+}
 
+.btn-link {
+  text-decoration: none;
+}
+
+/* Header Section Css */
 .header {
   position: fixed;
   top: 20px;
@@ -132,7 +236,7 @@ body {
 
 /* Nav links hidden by default on small screens */
 .nav-items {
-  display: none; 
+  display: none;
   flex-direction: column;
   position: absolute;
   top: 100%;
@@ -165,9 +269,6 @@ body {
   color: var(--color-accent);
 }
 
-
-
-
 /* Hamburger icon always visible on mobile/tablet */
 .hamburger {
   display: block;
@@ -177,6 +278,7 @@ body {
   color: white;
   cursor: pointer;
 }
+
 .hide-navbar {
   transform: translateY(-200%);
 }
@@ -186,6 +288,7 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
 .background-video {
   position: absolute;
   top: 0;
@@ -218,37 +321,8 @@ body {
   font-size: 30px;
   padding: 2rem;
 }
-.athlete {
-  position: absolute;
-  z-index: 1;
-  max-height: 300px;
-}
 
-.cricketer-left {
-  left: 2%;
-  top: 20%;
-}
-
-.cricketer-right {
-  right: 2%;
-  top: 20%;
-}
-
-.footballer-left {
-  left: 10%;
-  bottom: 5%;
-}
-
-.footballer-right {
-  right: 10%;
-  bottom: 5%;
-}
-
-.tennis-player {
-  bottom: 0%;
-  left: 45%;
-  transform: translateX(-50%);
-}
+/* Event Section Css  */
 
 .event-timer {
   background: linear-gradient(to bottom right, var(--color-dark-bg), #000);
@@ -313,6 +387,8 @@ body {
   color: var(--color-light-text);
   margin-top: var(--spacing-sm);
 }
+
+/* Club Section Css */
 .clubs-container {
   text-align: center;
   max-width: 1200px;
@@ -326,25 +402,43 @@ body {
   margin-bottom: 3rem;
   color: var(--primary-color);
 }
-
+.clubs-slider-wrapper {
+  overflow: hidden;
+  position: relative;
+}
 .clubs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
   gap: 2rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  animation: scrollLeft 30s linear infinite;
+  will-change: transform;
+}
+
+.clubs-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
 .club-card {
-  position: relative;
+  flex: 0 0 300px;
+  border-radius: var(--border-radius-lg, 12px);
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0,0,0,0.1));
   overflow: hidden;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
+  position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.clubs-gird:hover {
+  animation-play-state: paused;
 }
 
 .club-card video {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
   transition: transform 0.3s ease;
   pointer-events: none;
 }
@@ -372,6 +466,8 @@ body {
 .club-card:hover .club-info {
   transform: translateY(0);
 }
+
+/* Metric Section Css */
 
 .metrics {
   background: var(--gradient-primary);
@@ -425,14 +521,17 @@ body {
   font-size: var(--font-size-md);
   font-family: var(--font-family);
 }
+
+/* Gallery Section Css */
 .gallery {
-    
+
   background: var(--color-dark-bg);
   padding: var(--spacing-xl);
   color: var(--color-light-text);
 }
+
 .gallery-container {
-      max-width: 1200px;
+  max-width: 1200px;
   margin: auto;
   width: 100%;
 }
@@ -469,7 +568,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Extra height/width */
 .gallery-item.tall {
   grid-row: span 2;
 }
@@ -477,6 +575,7 @@ body {
 .gallery-item.wide {
   grid-column: span 2;
 }
+/* Testimonial Section Css */
 
 .testimonials {
   background: var(--color-dark-bg);
@@ -533,15 +632,17 @@ body {
   color: var(--color-accent);
 }
 
-/* Scrolling animation */
 @keyframes scrollLeft {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
+
+/* Message Section Css */
 
 .message-from-dean {
   padding: var(--spacing-xl) var(--spacing-lg);
@@ -550,15 +651,15 @@ body {
 }
 
 .dean-message-container {
-    max-width: 1200px;
-    margin: auto;
-    width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--spacing-xl);
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap;
 }
 
 .dean-text {
@@ -591,6 +692,7 @@ body {
   overflow: hidden;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
+  background-color: var(--color-accent-hover);
 }
 
 .dean-photo {
@@ -617,6 +719,7 @@ body {
   bottom: 0;
 }
 
+/* Motivation Section Css */
 .motivation {
   padding: var(--spacing-xl) var(--spacing-lg);
   background-color: var(--color-light-bg);
@@ -665,6 +768,7 @@ body {
   flex-shrink: 0;
 }
 
+/* CTA Section css */
 .cta {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -689,39 +793,8 @@ body {
   gap: var(--spacing-md);
 }
 
-.btn {
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius-md);
-  font-weight: bold;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
+/* Footer Section Css */
 
-.btn.primary {
-  background-color: var(--color-accent);
-  color: var(--color-white);
-  border: none;
-}
-
-.btn.primary:hover {
-  background-color: var(--color-accent-dark);
-}
-
-.btn.outline {
-  background: transparent;
-  color: var(--color-white);
-  border: 2px solid var(--color-white);
-  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
-}
-
-
-.btn.outline:hover {
-  background-color: rgba(255, 215, 0, 0.5); 
-  border-color: var(--color-accent);
-  color: var(--color-accent-dark);
-}
 .footer {
   background: var(--color-dark-bg);
   color: var(--color-light-text);
@@ -787,4 +860,3 @@ body {
 .footer-text-container span {
   color: var(--color-accent);
 }
-
