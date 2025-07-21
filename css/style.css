@@ -5,6 +5,7 @@
   --color-dark-bg: #121212;
   --color-light-text: #ffffff;
   --color-accent: #FFD700;
+   --accent-light: #ffc371;
   /* Gold */
   --color-accent-hover: #E5C100;
 
@@ -309,6 +310,7 @@
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -408,12 +410,17 @@
 }
 .clubs-grid {
   display: flex;
+  cursor: grab;
+  cursor: -webkit-grab;
+  overflow-x: auto;
   gap: 2rem;
-  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-  animation: scrollLeft 30s linear infinite;
+  scrollbar-width: none; 
   will-change: transform;
+}
+.clubs-grid.dragging {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
 }
 
 .clubs-grid::-webkit-scrollbar {
@@ -421,7 +428,7 @@
 }
 
 .club-card {
-  flex: 0 0 300px;
+  flex: 0 0 350px;
   border-radius: var(--border-radius-lg, 12px);
   box-shadow: var(--shadow-md, 0 4px 6px rgba(0,0,0,0.1));
   overflow: hidden;
@@ -461,6 +468,11 @@
   color: white;
   transition: transform 0.3s ease;
   transform: translateY(100%);
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE10+/Edge */
+
 }
 
 .club-card:hover .club-info {
@@ -860,3 +872,39 @@
 .footer-text-container span {
   color: var(--color-accent);
 }
+
+.mouse {
+    width: 35px;
+    height: 55px;
+    border: 2px solid white;
+    border-radius: 25px;
+    position: relative;
+}
+
+.scroll-dot {
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 5px);
+    }
+    30% {
+        opacity: 1;
+        transform: translate(-50%, 15px);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 30px);
+    }
+}
+
