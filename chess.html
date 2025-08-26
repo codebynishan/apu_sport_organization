@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APU Chess Club</title>
+  <link rel="stylesheet" href="css/chess.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo-container">
+      <a class="text-decoration-none" href="/index.html"><h1>♟️ APU Chess</h1></a>
+    </div>
+    <nav class="nav-links">
+      <a href="/form.html" class="btn-nav">JOIN US</a>
+    </nav>
+    <div class="menu-toggle">☰</div>
+  </header>
+
+   <a href="/sports.html" class="back-btn">← Back to Sports Club</a>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner animate-fade">
+      <h2>Welcome to <span class="brand">APU Chess Club</span></h2>
+      <p>Sharpen your mind, challenge opponents, and master the art of chess.</p>
+      <a href="#join" class="btn-hero">Get Started</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="bg animate-up">
+    <h2>About Us</h2>
+    <p>
+      APU Chess Club unites chess enthusiasts to improve skills, compete in tournaments, and enjoy the game in a strategic community.
+      From casual matches to inter-university competitions, we aim to cultivate a culture of intellectual growth.
+    </p>
+  </section>
+
+  <!-- Mission & Info -->
+  <section id="objective" class="animate-up">
+    <div class="cards">
+      <div class="card">
+        <h3>🏆 Our Mission</h3>
+        <p>To promote strategic thinking, develop chess skills, and represent APU with excellence in competitions.</p>
+      </div>
+      <div class="card">
+        <h3>📅 What We Do</h3>
+        <p>We host weekly chess sessions, tournaments, workshops, and online chess events.</p>
+      </div>
+      <div class="card">
+        <h3>📩 Get In Touch</h3>
+        <p>Email: <a href="mailto:info@apuchess.com">info@apuchess.com</a><br>
+          Call: +977 9800000000</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events" class="bg animate-up">
+    <h2>Upcoming Events</h2>
+    <ul class="event-list">
+      <li><strong>APU Inter-University Chess Cup</strong> – February 2025</li>
+      <li><strong>Online Chess Blitz Tournament</strong> – April 2025</li>
+      <li><strong>Summer Chess Workshop</strong> – June 2025</li>
+    </ul>
+  </section>
+
+  <!-- Join -->
+  <section id="join" class="animate-up">
+    <h2>Join the Club</h2>
+    <div class="join-grid">
+      <div class="join-card">
+        <h3>🙌 Volunteer</h3>
+        <p>Help organize chess tournaments, manage events, and grow the chess community.</p>
+        <button class="btn">Become a Volunteer</button>
+      </div>
+      <div class="join-card">
+        <h3>♟️ Player</h3>
+        <p>Join the team, participate in tournaments, and sharpen your chess skills.</p>
+        <button class="btn">Register as Player</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>2025 @ created with love by Nishan Rana,Surendra Bhattarai,Sunil Nagarkoti</p>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

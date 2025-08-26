@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APU Tug of War Club</title>
+  <link rel="stylesheet" href="css/tugofwar.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo-container">
+      <a class="text-decoration-none" href="/index.html"><h1>💪 APU Tug of War Club</h1></a>
+    </div>
+    <nav class="nav-links">
+      <a href="/form.html" class="btn-nav">JOIN US</a>
+    </nav>
+    <div class="menu-toggle">☰</div>
+  </header>
+
+
+   <a href="/sports.html" class="back-btn">← Back to Sports Club</a>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner animate-fade">
+      <h2>Welcome to <span class="brand">APU Tug of War Club</span></h2>
+      <p>Build strength, teamwork, and strategy with our competitive tug of war teams.</p>
+      <a href="#join" class="btn-hero">Get Started</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="bg animate-up">
+    <h2>About Us</h2>
+    <p>
+      APU Tug of War Club brings together athletes and enthusiasts to develop power, coordination, and team spirit. 
+      We organize practices, competitions, and fun events for everyone.
+    </p>
+  </section>
+
+  <!-- Mission & Info -->
+  <section id="objective" class="animate-up">
+    <div class="cards">
+      <div class="card">
+        <h3>🏆 Our Mission</h3>
+        <p>To promote teamwork, strength, and competitive spirit through tug of war.</p>
+      </div>
+      <div class="card">
+        <h3>📅 What We Do</h3>
+        <p>We organize practice sessions, university competitions, and strength & strategy workshops.</p>
+      </div>
+      <div class="card">
+        <h3>📩 Get In Touch</h3>
+        <p>Email: <a href="mailto:info@aputugofwar.com">info@aputugofwar.com</a><br>
+          Call: +977 9800000000</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events" class="bg animate-up">
+    <h2>Upcoming Events</h2>
+    <ul class="event-list">
+      <li><strong>Inter-University Tug of War Championship</strong> – March 2025</li>
+      <li><strong>Strength & Teamwork Workshop</strong> – April 2025</li>
+      <li><strong>Summer Practice & Fun Event</strong> – June 2025</li>
+    </ul>
+  </section>
+
+  <!-- Join -->
+  <section id="join" class="animate-up">
+    <h2>Join the Club</h2>
+    <div class="join-grid">
+      <div class="join-card">
+        <h3>🙌 Volunteer</h3>
+        <p>Help organize events, manage competitions, and assist the team during matches.</p>
+        <button class="btn">Become a Volunteer</button>
+      </div>
+      <div class="join-card">
+        <h3>💪 Player</h3>
+        <p>Train with the team, participate in competitions, and represent APU in tug of war events.</p>
+        <button class="btn">Register as Player</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>2025 @ created with love by Nishan Rana,Surendra Bhattarai,Sunil Nagarkoti</p>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

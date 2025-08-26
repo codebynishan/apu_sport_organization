@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APU Badminton Club</title>
+  <link rel="stylesheet" href="css/badminton.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Background Overlay -->
+  <div class="background-overlay"></div>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo-container">
+      <a class="text-decoration-none" href="/index.html">
+        <h1>🏸 APU Badminton Clubs</h1>
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="/form.html" class="btn-nav">JOIN US</a>
+    </nav>
+    <div class="menu-toggle">☰</div>
+  </header>
+
+  <!-- Back Button -->
+  <a href="/sports.html" class="back-btn">← Back to Sports Club</a>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>Welcome to <span class="brand">APU Badminton Club</span></h2>
+      <p>Smash, rally, and compete in a fun and energetic badminton community.</p>
+      <a href="#join" class="btn-hero">Get Started</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="bg">
+    <h2>About Us</h2>
+    <p>
+      APU Badminton Club is a hub for players of all levels. We provide training, practice sessions, and tournaments,
+      promoting fitness, fun, and camaraderie through badminton.
+    </p>
+  </section>
+
+  <!-- Mission & Info -->
+  <section id="objective">
+    <div class="cards">
+      <div class="card">
+        <h3>🏆 Our Mission</h3>
+        <p>To promote badminton, enhance skills, and create a vibrant and active community.</p>
+      </div>
+      <div class="card">
+        <h3>📅 What We Do</h3>
+        <p>We organize practice sessions, weekend rallies, inter-university tournaments, and skill workshops.</p>
+      </div>
+      <div class="card">
+        <h3>📩 Get In Touch</h3>
+        <p>Email: <a href="mailto:info@apubadminton.com">info@apubadminton.com</a><br />
+          Call: +977 9800000000</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events" class="bg">
+    <h2>Upcoming Events</h2>
+    <ul class="event-list">
+      <li><strong>APU Inter-University Badminton Tournament</strong> – March 2025</li>
+      <li><strong>Summer Shuttle Rally</strong> – May 2025</li>
+      <li><strong>Skills Workshop & Training Camp</strong> – June 2025</li>
+    </ul>
+  </section>
+
+  <!-- Join -->
+  <section id="join">
+    <h2>Join the Club</h2>
+    <div class="join-grid">
+      <div class="join-card">
+        <h3>🙌 Volunteer</h3>
+        <p>Assist in organizing events, matches, and workshops for the badminton community.</p>
+        <button class="btn">Become a Volunteer</button>
+      </div>
+      <div class="join-card">
+        <h3>👟 Player</h3>
+        <p>Participate in training sessions, tournaments, and represent APU on court.</p>
+        <button class="btn">Register as Player</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+  <p>2025 @ created with love by Nishan Rana,Surendra Bhattarai,Sunil Nagarkoti</p>
+
+  </footer>
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
+</body>
+
+</html>

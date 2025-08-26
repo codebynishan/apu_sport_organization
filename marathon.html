@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APU Marathon Club</title>
+  <link rel="stylesheet" href="css/marathon.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ 
+  <!-- Navbar -->
+  <header>
+    <div class="logo-container">
+      <a class="text-decoration-none" href="/index.html"><h1>🏃‍♂️ APU Marathon Club</h1></a>
+    </div>
+    <nav class="nav-links">
+      <a href="/form.html" class="btn-nav">JOIN US</a>
+    </nav>
+    <div class="menu-toggle">☰</div>
+  </header>
+
+   <a href="/sports.html" class="back-btn">← Back to Sports Club</a>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner animate-fade">
+      <h2>Welcome to <span class="brand">APU Marathon Club</span></h2>
+      <p>Run, challenge yourself, and join a community passionate about endurance and fitness.</p>
+      <a href="#join" class="btn-hero">Get Started</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="bg animate-up">
+    <h2>About Us</h2>
+    <p>
+      APU Marathon Club encourages runners of all levels to improve fitness, set personal goals, and participate in
+      local and university-wide marathons. We focus on training, safety, and building a supportive running community.
+    </p>
+  </section>
+
+  <!-- Mission & Info -->
+  <section id="objective" class="animate-up">
+    <div class="cards">
+      <div class="card">
+        <h3>🏆 Our Mission</h3>
+        <p>To promote health, endurance, and teamwork through long-distance running.</p>
+      </div>
+      <div class="card">
+        <h3>📅 What We Do</h3>
+        <p>We organize training sessions, university marathons, weekly runs, and endurance workshops.</p>
+      </div>
+      <div class="card">
+        <h3>📩 Get In Touch</h3>
+        <p>Email: <a href="mailto:info@apumarathon.com">info@apumarathon.com</a><br>
+          Call: +977 9800000000</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events" class="bg animate-up">
+    <h2>Upcoming Events</h2>
+    <ul class="event-list">
+      <li><strong>APU University Marathon</strong> – March 2025</li>
+      <li><strong>City Fun Run</strong> – April 2025</li>
+      <li><strong>Summer Endurance Challenge</strong> – June 2025</li>
+    </ul>
+  </section>
+
+  <!-- Join -->
+  <section id="join" class="animate-up">
+    <h2>Join the Club</h2>
+    <div class="join-grid">
+      <div class="join-card">
+        <h3>🙌 Volunteer</h3>
+        <p>Assist in organizing running events, training sessions, and marathons for the community.</p>
+        <button class="btn">Become a Volunteer</button>
+      </div>
+      <div class="join-card">
+        <h3>🏃‍♂️ Runner</h3>
+        <p>Participate in training, university marathons, and represent APU in running competitions.</p>
+        <button class="btn">Register as Runner</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>2025 @ created with love by Nishan Rana,Surendra Bhattarai,Sunil Nagarkoti</p>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

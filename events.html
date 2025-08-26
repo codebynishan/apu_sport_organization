@@ -64,6 +64,19 @@
         position: relative;
         z-index: 1;
     }
+    .back-button {
+  display: inline-block;
+  margin-bottom: var(--spacing-md);
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-accent);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  backdrop-filter: blur(6px);
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-size: var(--font-size-md);
+}
 
     .event-details {
         position: absolute;
@@ -103,7 +116,15 @@
     <body>
 
         <h1 style="color: var(--color-accent); text-align: center;">🏆 APU Sports Events</h1>
-
+        <div class="top-action-bar">
+            <style>
+                .top-action-bar {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            </style>
+             <a href="index.html" class="back-button">← Back to Home</a>
         <div class="filter-bar">
             <select id="clubFilter">
                 <option value="all">All Clubs</option>
@@ -113,7 +134,9 @@
                 <option value="Table Tennis Club">Table Tennis Club</option>
                 <option value="Volleyball Club">Volleyball Club</option>
                 <option value="Wellness Club">Wellness Club</option>
+            
             </select>
+        </div>
         </div>
 
         <!-- Sections for Upcoming, Ongoing, and Finished -->

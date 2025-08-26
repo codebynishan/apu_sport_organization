@@ -1,0 +1,184 @@
+:root {
+  --brand: #daa520;       /* Chess theme: golden color */
+  --text: #fff;
+  --muted: #ccc;
+  --card-bg: rgba(0, 0, 0, 0.4);   /* Dark semi-transparent for chess vibe */
+  --glass: rgba(0, 0, 0, 0.6);
+}
+.text-decoration-none {
+  text-decoration: none;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  background-image: url('/assets/chess-img.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+/* Navbar */
+header {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px 40px;
+  background: var(--glass);
+  position: sticky;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  top: 0;
+
+}
+header h1 { font-size: 22px; font-weight: 800; color: #fff; }
+nav { display: flex; gap: 20px; }
+nav a {
+  text-decoration: none; color: #fff; font-weight: 600;
+  transition: 0.3s;
+}
+nav a:hover { color: var(--brand); }
+.menu-toggle {
+  display: none; font-size: 24px; cursor: pointer; color: #fff;
+}
+nav.active { display: flex; flex-direction: column; position: absolute;
+  top: 60px; right: 20px; background: color-mix(in hsl shorter hue, color percentage, color percentage);
+  padding: 12px; border-radius: 10px;
+}
+
+/* Buttons */
+.btn-nav, .btn, .btn-hero {
+  background: orange;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-nav:hover, .btn:hover, .btn-hero:hover { background: #ffd700; transform: translateY(-2px); }
+.btn-hero { margin-top: 20px; }
+
+
+/* Back button */
+.back-btn {
+  display: inline-block;
+  margin: 20px 40px;
+  background: orange;
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, background 0.3s;
+}
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+.hero-inner {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  display: inline-block;
+  animation: fadeIn 1.2s ease-in;
+}
+.hero h2 { font-size: 40px; font-weight: 800; }
+.brand { color: var(--brand); }
+.hero p { margin-top: 10px; color: var(--muted); }
+
+/* Sections */
+section {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+section h2 {
+  text-align: center; margin-bottom: 30px;
+  font-size: 28px; font-weight: 700;
+}
+.bg {
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+
+/* Events */
+.event-list {
+  list-style: none; text-align: center;
+}
+.event-list li {
+  margin: 12px 0; font-size: 18px;
+}
+
+/* Join */
+.join-grid {
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+}
+.join-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.8);
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade { animation: fadeIn 1.5s ease; }
+.animate-up { animation: fadeIn 1.5s ease; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav { display: none; }
+  .menu-toggle { display: block; }
+  .hero h2 { font-size: 28px; }
+}
