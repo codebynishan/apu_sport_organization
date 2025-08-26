@@ -16,7 +16,7 @@
   </div>
 
   <div class="form-container">
-      <a href="index.html" class="back-button">← Back to Home</a>
+      <button id="backbtn" class="back-button">← Back to Home</button>
     <form class="registration-form" onsubmit="event.preventDefault(); alert('The form has been submitted!')">
       <h2>Join University Sports Club</h2>
 
@@ -62,6 +62,13 @@
     video.addEventListener("canplaythrough", () => {
       video.style.opacity = "1"; 
     });
+
+
+
+    const backButton = document.getElementById("backbtn");
+    document.addEventListener('click', () => {
+      history.back();
+    })
   </script>
    </body>
 </html>
