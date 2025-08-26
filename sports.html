@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APU Sports Clubs</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/sports.css">
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <!-- Overlay for pulse animation -->
+  <div class="overlay"></div>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo-container">
+      <a class="text-decoration-none" href="/index.html">
+        <h1>🏅 APU Sports</h1>
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="/index.html">Home</a>
+      <a href="#sports">Sports</a>
+      <a href="#join" class="btn-nav">Join Club</a>
+    </nav>
+    <div class="menu-toggle">☰</div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner animate-fade">
+      <h2>Explore APU <span class="brand">Sports Clubs</span></h2>
+      <p>Discover all the sports at APU. Join, train, and compete with your team.</p>
+    </div>
+  </section>
+
+  <!-- Sports Section -->
+  <section id="sports">
+    <h2>All Sports</h2>
+    <div class="sports-grid">
+
+    
+      <div class="sport-card" data-aos="fade-right" data-location="/basketball.html">
+        <img src="/assets/basket.jpeg" alt="Basketball">
+        <div class="card-content">
+          <h3>Basketball</h3>
+          <p>Join our high-energy basketball team and compete in inter-university tournaments.</p>
+        </div>
+      </div>
+
+      <div class="sport-card" data-aos="fade-left" data-location="/futsal.html">
+        <img src="/assets/futsal.jpeg" alt="Futsal">
+        <div class="card-content">
+          <h3>Futsal</h3>
+          <p>Be part of the APU futsal club and showcase your skills on the field.</p>
+        </div>
+      </div>
+
+ 
+      <div class="sport-card" data-aos="fade-right" data-location="/marathon.html"> <img
+          src="/assets/marathon.jpeg" alt="Marathon">
+        <div class="card-content">
+          <h3>Marathon</h3>
+          <p>Challenge your endurance and push your limits in long-distance running.</p>
+        </div>
+      </div>
+    
+      <div class="sport-card" data-aos="fade-left" onclick="window.location.href='/cricket.html'"> <img
+          src="/assets/cricket.jpeg" alt="Cricket">
+        <div class="card-content">
+          <h3>Cricket</h3>
+          <p>Bat, bowl, and field with the cricket club — where strategy meets action.</p>
+        </div>
+      </div> 
+      
+      <div class="sport-card" data-aos="fade-right" onclick="window.location.href='/chess.html'"> <img
+          src="/assets/chess.jpeg" alt="Chess">
+        <div class="card-content">
+          <h3>Chess</h3>
+          <p>Sharpen your mind with strategic battles on the chessboard.</p>
+        </div>
+      </div> 
+
+       <div class="sport-card" data-aos="fade-right" onclick="window.location.href='/tugofwar.html'"> <img
+          src="/assets/tug.jpeg" alt="Tug of War">
+        <div class="card-content">
+          <h3>Tug of War</h3>
+          <p>Strength and teamwork combined in the ultimate test of pulling power.</p>
+        </div>
+      </div> 
+
+       <div class="sport-card" data-aos="fade-right" onclick="window.location.href='/esport.html'"> <img
+          src="/assets/pubg2.jpeg" alt="Esport">
+        <div class="card-content">
+          <h3>Esport</h3>
+          <p>Step into competitive gaming and showcase your skills in esports.</p>
+        </div>
+      </div> 
+
+
+      <div class="sport-card" data-aos="fade-right" onclick="window.location.href='/badminton.html'"> <img
+          src="/assets/badmention.jpeg" alt="Esport">
+        <div class="card-content">
+          <h3>Badminton</h3>
+          <p>Smash and rally with APU’s badminton club, open for all skill levels.</p>
+        </div>
+      </div> 
+      
+       <div class="sport-card" data-aos="fade-right" onclick="window.location.href='/carrom.html'"> <img
+          src="/assets/carrom.jpeg" alt="Esport">
+        <div class="card-content">
+          <h3>Carrom</h3>
+          <p>A classic indoor board game of precision, focus, and friendly rivalry.</p>
+        </div>
+      </div> 
+
+      <div class="sport-card" data-aos="fade-left" onclick="window.location.href='/tabletennis.html'"> <img
+          src="/assets/table.jpeg" alt="Table Tennis">
+        <div class="card-content">
+          <h3>Table Tennis</h3>
+          <p>Fast hands and sharp reflexes — enjoy the thrill of table tennis rallies.</p>
+        </div>
+      </div>
+
+     
+    </div>
+  </section>
+
+
+  <footer>
+    <p>2025 @ created with love by Nishan Rana,Surendra Bhattarai,Sunil Nagarkoti</p>
+  </footer>
+
+ 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, offset: 120 });
+
+
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => nav.classList.toggle("active"));
+
+
+    const cards = document.querySelectorAll(".sport-card");
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        const location = card.dataset.location;
+        if (location) window.location.href = location;
+      });
+    });
+  </script>
+</body>
+
+</html>
