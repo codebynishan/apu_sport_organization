@@ -35,8 +35,9 @@ header {
   background: var(--glass);
   backdrop-filter: blur(10px);
   z-index: 1000;
+  
 }
-header h1 { font-size: 22px; font-weight: 800; color: #fff; }
+header h1 { font-size: 22px; font-weight: 800; color: #ff7b00 }
 nav { display: flex; gap: 20px; }
 
 /* Navbar links styled as buttons */
