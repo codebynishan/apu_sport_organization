@@ -102,7 +102,16 @@
 
     nav a:hover {
       color: var(--brand);
+      text-decoration: none;
     }
+
+
+    nav a,
+nav a:visited,
+nav a:hover,
+nav a:active {
+  text-decoration: none !important;
+}
 
     .menu-toggle {
       display: none;
