@@ -1,281 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Sports Events | APU</title>
-        <style>
-:root {
-    --color-dark-bg: #121212;
-    --color-light-text: #ffffff;
-    --color-accent: #FFD700;
-    --color-accent-hover: #E5C100;
-    --gradient-primary: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(30, 30, 30, 0.8) 100%);
-    --border-radius: 12px;
-}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sports Events | APU</title>
+  <link rel="stylesheet" href="css/event.css">
+</head>
+<body>
 
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background: var(--color-dark-bg);
-        color: var(--color-light-text);
-        padding: 2rem;
-    }
+  <h1>🏆 APU Sports Events</h1>
+  <div class="top-action-bar">
+    <a href="index.html" class="back-button">← Back to Home</a>
+    <div class="filter-bar">
+      <select id="clubFilter">
+        <option value="all">All Clubs</option>
+        <option value="Football Club">Football Club</option>
+        <option value="Basketball Club">Basketball Club</option>
+        <option value="Badminton Club">Badminton Club</option>
+        <option value="Table Tennis Club">Table Tennis Club</option>
+        <option value="Volleyball Club">carrom Club</option>
+        <option value="Wellness Club">Chess Club</option>
+        <option value="Wellness Club">Marathon Club</option>
+        <option value="Wellness Club">Tug of war Club</option>
+        <option value="Wellness Club">Esport Club</option>
+        <option value="Wellness Club">Cricket Club</option>
 
-    h2.section-title {
-        font-size: 2rem;
-        margin: 2rem 0 1rem;
-        color: var(--color-accent);
-    }
+        
 
-    .filter-bar {
-        margin-bottom: 2rem;
-    }
-
-    .filter-bar select {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-        border-radius: var(--border-radius);
-        border: none;
-        background: var(--color-accent);
-        color: black;
-        cursor: pointer;
-    }
-
-    .cards-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 1.5rem;
-    }
-    .event-wrapper {
-        position: relative;
-        width: 300px; /* Match card width */
-        height: auto;
-    }
-
-    .event-card {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: var(--border-radius);
-        padding: 2rem;
-        width: 100%;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-        position: relative;
-        z-index: 1;
-    }
-    .back-button {
-  display: inline-block;
-  margin-bottom: var(--spacing-md);
-  padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--color-accent);
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: var(--border-radius-md);
-  backdrop-filter: blur(6px);
-  transition: background 0.3s ease, transform 0.3s ease;
-  font-size: var(--font-size-md);
-}
-
-    .event-details {
-        position: absolute;
-        top: 0;
-        left: 100%; /* place to the right of the card */
-        width: 320px;
-        background: var(--gradient-primary);
-        color: var(--color-light-text);
-        border-radius: var(--border-radius);
-        padding: 1.5rem;
-        margin-left: 1rem;
-        z-index: 10;
-        display: none;
-    }
-
-    .event-wrapper:hover .event-details {
-        display: block;
-    }
-
-
-
-    .hidden {
-        display: none;
-    }
-
-    #upcomingSection,
-    #ongoingSection,
-    #finishedSection {
-        max-width: 1200px;
-        width: 100%;
-        margin: 2rem auto;
-        padding: 0 1rem;
-    }
-
-        </style>
-    </head>
-    <body>
-
-        <h1 style="color: var(--color-accent); text-align: center;">🏆 APU Sports Events</h1>
-        <div class="top-action-bar">
-            <style>
-                .top-action-bar {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                }
-            </style>
-             <a href="index.html" class="back-button">← Back to Home</a>
-        <div class="filter-bar">
-            <select id="clubFilter">
-                <option value="all">All Clubs</option>
-                <option value="Football Club">Football Club</option>
-                <option value="Basketball Club">Basketball Club</option>
-                <option value="Badminton Club">Badminton Club</option>
-                <option value="Table Tennis Club">Table Tennis Club</option>
-                <option value="Volleyball Club">Volleyball Club</option>
-                <option value="Wellness Club">Wellness Club</option>
-            
-            </select>
-        </div>
-        </div>
-
-        <!-- Sections for Upcoming, Ongoing, and Finished -->
-        <div id="upcomingSection">
-            <h2 class="section-title">🗓️ Upcoming Events</h2>
-            <div class="cards-grid" id="upcomingEvents"></div>
-        </div>
-
-        <div id="ongoingSection">
-            <h2 class="section-title">🔥 Ongoing Events</h2>
-            <div class="cards-grid" id="ongoingEvents"></div>
-        </div>
-
-        <div id="finishedSection">
-            <h2 class="section-title">✅ Finished Events</h2>
-            <div class="cards-grid" id="finishedEvents"></div>
-        </div>
-
-        <script>
-            const events = [
-                {
-                    title: "APU Football Cup",
-                    club: "Football Club",
-                    start: "2025-10-05T16:00",
-                    end: "2025-10-05T18:00",
-                    venue: "Main Field",
-                    status: "upcoming",
-                    desc: "Annual football tournament featuring university teams."
-                },
-                {
-                    title: "Badminton Battle",
-                    club: "Badminton Club",
-                    start: "2025-07-20T10:00",
-                    end: "2025-07-20T15:00",
-                    venue: "Indoor Hall B",
-                    status: "finished",
-                    desc: "Singles and doubles competition for all levels."
-                },
-                {
-                    title: "Slam Dunk Day",
-                    club: "Basketball Club",
-                    start: "2025-07-21T12:00",
-                    end: "2025-07-21T17:00",
-                    venue: "Court A",
-                    status: "ongoing",
-                    desc: "Dunk competition, 3pt shootout, team games."
-                },
-                {
-                    title: "TT Tournament",
-                    club: "Table Tennis Club",
-                    start: "2025-08-15T11:00",
-                    end: "2025-08-15T15:00",
-                    venue: "Room 104",
-                    status: "upcoming",
-                    desc: "Fast-paced singles & doubles table tennis tournament."
-                },
-                {
-                    title: "VolleyFest",
-                    club: "Volleyball Club",
-                    start: "2025-07-18T09:00",
-                    end: "2025-07-18T13:00",
-                    venue: "Volleyball Court",
-                    status: "finished",
-                    desc: "Campus-wide volleyball competition."
-                },
-                {
-                    title: "Yoga Wellness Day",
-                    club: "Wellness Club",
-                    start: "2025-07-21T09:00",
-                    end: "2025-07-21T11:00",
-                    venue: "Lawn D",
-                    status: "ongoing",
-                    desc: "Relax with guided yoga and meditation sessions."
-                }
-            ];
-
-            const sections = {
-                upcoming: document.getElementById("upcomingEvents"),
-                ongoing: document.getElementById("ongoingEvents"),
-                finished: document.getElementById("finishedEvents"),
-            };
-
-            function createCard(event) {
-                const wrapper = document.createElement("div");
-                wrapper.className = "event-wrapper";
-                wrapper.setAttribute("data-club", event.club);
-
-                const card = document.createElement("div");
-                card.className = "event-card";
-                card.innerHTML = `
-    <div class="title">${event.title}</div>
-    <div class="meta">
-      📅 ${new Date(event.start).toLocaleDateString()}<br>
-      ⏱️ ${new Date(event.start).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} – 
-      ${new Date(event.end).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+      </select>
     </div>
-  `;
+  </div>
 
-          const detail = document.createElement("div");
-          detail.className = "event-details";
-          detail.innerHTML = `
-    <h3>${event.title}</h3>
-    <p><strong>Club:</strong> ${event.club}</p>
-    <p><strong>Time:</strong> ${new Date(event.start).toLocaleString()} - ${new Date(event.end).toLocaleString()}</p>
-    <p><strong>Venue:</strong> ${event.venue}</p>
-    <p><strong>Description:</strong> ${event.desc}</p>
-  `;
+  <!-- Sections -->
+  <section id="upcomingSection">
+    <h2 class="section-title">🗓️ Upcoming Events</h2>
+    <div class="cards-grid" id="upcomingEvents"></div>
+  </section>
 
-          wrapper.appendChild(card);
-          wrapper.appendChild(detail);
-          return wrapper;
+  <section id="ongoingSection">
+    <h2 class="section-title">🔥 Ongoing Events</h2>
+    <div class="cards-grid" id="ongoingEvents"></div>
+  </section>
+
+  <section id="finishedSection">
+    <h2 class="section-title">✅ Finished Events</h2>
+    <div class="cards-grid" id="finishedEvents"></div>
+  </section>
+
+  <script>
+    const events = [
+      {
+        title: "Football Cup",
+        club: "Football Club",
+        start: "2025-10-05T16:00",
+        end: "2025-10-05T18:00",
+        venue: "Main Field",
+        status: "upcoming",
+        desc: "Annual football tournament featuring university teams."
+      },
+      {
+        title: "Badminton Battle",
+        club: "Badminton Club",
+        start: "2025-07-20T10:00",
+        end: "2025-07-20T15:00",
+        venue: "Indoor Hall B",
+        status: "finished",
+        desc: "Singles and doubles competition for all levels."
+      },
+      {
+        title: "Win the ball",
+        club: "Basketball Club",
+        start: "2025-07-21T12:00",
+        end: "2025-07-21T17:00",
+        venue: "Court A",
+        status: "ongoing",
+        desc: "Dunk competition, 3pt shootout, team games."
+      },
+      {
+        title: "TT Tournament",
+        club: "Table Tennis Club",
+        start: "2025-08-15T11:00",
+        end: "2025-08-15T15:00",
+        venue: "Room 104",
+        status: "upcoming",
+        desc: "Fast-paced singles & doubles table tennis tournament."
+      },
+      {
+        title: "Chess",
+        club: "Chess Club",
+        start: "2025-07-18T09:00",
+        end: "2025-07-18T13:00",
+        venue: "Everest block-A",
+        status: "finished",
+        desc: "Campus-wide chess competition."
+      },
+      {
+        title: "Carrom tournment",
+        club: "Carrom Club",
+        start: "2025-07-21T09:00",
+        end: "2025-07-21T11:00",
+        venue: "Collage",
+        status: "ongoing",
+        desc: "Win the battle"
       }
+    ];
 
-          function renderEvents() {
-              Object.values(sections).forEach(sec => sec.innerHTML = "");
+    const sections = {
+      upcoming: document.getElementById("upcomingEvents"),
+      ongoing: document.getElementById("ongoingEvents"),
+      finished: document.getElementById("finishedEvents"),
+    };
 
-              events.forEach(e => {
-                  const card = createCard(e);
-                  sections[e.status].appendChild(card);
-              });
-          }
+    function createCard(event) {
+      const card = document.createElement("div");
+      card.className = "event-card";
+      card.innerHTML = `
+        <div class="title">${event.title}</div>
+        <div class="meta">
+          📅 ${new Date(event.start).toLocaleDateString()}<br>
+          ⏱️ ${new Date(event.start).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} – 
+          ${new Date(event.end).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+        </div>
+        <div class="event-details">
+          <p><strong>Club:</strong> ${event.club}</p>
+          <p><strong>Venue:</strong> ${event.venue}</p>
+          <p>${event.desc}</p>
+        </div>
+      `;
+      return card;
+    }
 
-          // Filter logic
-          document.getElementById("clubFilter").addEventListener("change", e => {
-              const value = e.target.value;
+    function renderEvents() {
+      Object.values(sections).forEach(sec => sec.innerHTML = "");
+      events.forEach(e => {
+        const card = createCard(e);
+        sections[e.status].appendChild(card);
+      });
+    }
 
-              document.querySelectorAll(".event-wrapper").forEach(wrapper => {
-                  const club = wrapper.getAttribute("data-club");
+    // Filter
+    document.getElementById("clubFilter").addEventListener("change", e => {
+      const value = e.target.value;
+      document.querySelectorAll(".event-card").forEach(card => {
+        const clubText = card.querySelector(".event-details p").innerText;
+        if (value === "all" || clubText.includes(value)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
 
-                  if (value === "all" || club === value) {
-                      wrapper.style.display = "flex"; // restore visible wrapper
-                  } else {
-                      wrapper.style.display = "none"; // hide completely
-                  }
-              });
-          });
-
-          renderEvents();
-        </script>
-    </body>
+    renderEvents();
+  </script>
+</body>
 </html>
-

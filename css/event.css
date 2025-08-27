@@ -1,0 +1,122 @@
+:root {
+  --color-dark-bg: rgba(0,0,0,0.7); /* for overlays */
+  --color-light-text: #ffffff;
+  --color-accent: #00BFFF; /* sky blue for highlight */
+  --color-accent-hover: #FFD700; /* gold hover */
+  --border-radius: 14px;
+}
+
+/* background with blur overlay */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--color-light-text);
+  line-height: 1.6;
+  background: url('/assets/event-img.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--color-dark-bg);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
+/* Header */
+h1 {
+  color: var(--color-accent);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Top Bar */
+.top-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.back-button {
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.1);
+  color: var(--color-accent);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+.back-button:hover {
+  background: var(--color-accent);
+  color: black;
+}
+
+/* Filter Bar */
+.filter-bar select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: none;
+  background: var(--color-accent);
+  color: black;
+  cursor: pointer;
+}
+
+/* Section Styles */
+section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+h2.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-accent);
+  border-left: 5px solid var(--color-accent);
+  padding-left: 10px;
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--border-radius);
+  padding: 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.event-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.15);
+}
+
+.event-card .title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--color-accent-hover);
+  margin-bottom: 0.5rem;
+}
+
+.event-details {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #ddd;
+}
