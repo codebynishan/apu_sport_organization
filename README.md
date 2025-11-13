@@ -10,12 +10,12 @@ The website aims to serve both current members and interested non-members by pro
 
 ## 🧑‍💻 Team Members
 
-| Name             | Student ID      |
-|------------------|-----------------|
-| [Name 1]         | [ID 1]          |
-| [Name 2]         | [ID 2]          |
-| [Name 3]         | [ID 3]          |
-| [Optional Name 4]| [ID 4]          |
+ Name             
+------------------
+ [Nishan Rana]         
+ [Surendra Bhattarai]        
+ [Sunil Nagarkoti]               
+
 
 ---
 
